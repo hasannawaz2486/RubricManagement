@@ -1,0 +1,1775 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cube.Pdf</name>
+    </assembly>
+    <members>
+        <member name="T:Cube.Pdf.Angle">
+            
+             Angle
+            
+             <summary>
+             Represents an angle in degree and radian units.
+             The class normalizes the degree within the range of [0, 360).
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Angle.#ctor">
+            
+             Angle
+            
+             <summary>
+             Initializes a new instance of the Angle class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Angle.#ctor(System.Int32)">
+            
+             Angle
+            
+             <summary>
+             Initializes a new instance of the Angle class with the
+             specified value in degree unit.
+             </summary>
+            
+             <param name="degree">Angle in degree unit.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Angle.Degree">
+            
+             Degree
+            
+             <summary>
+             Gets the angle in degree unit.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Angle.Radian">
+            
+             Radian
+            
+             <summary>
+             Gets the angle in radian unit.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Angle.op_Addition(Cube.Pdf.Angle,Cube.Pdf.Angle)">
+            
+             operator+
+            
+             <summary>
+             Gets the result of summing the two values.
+             </summary>
+            
+             <param name="x">Angle object.</param>
+             <param name="y">Angle object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Angle.op_Addition(Cube.Pdf.Angle,System.Int32)">
+            
+             operator+
+            
+             <summary>
+             Gets the result of summing the two values.
+             </summary>
+            
+             <param name="x">Angle object.</param>
+             <param name="y">Angle in degree unit.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Angle.Normalize(System.Int32)">
+            
+             Normalize
+            
+             <summary>
+             Normalizes the degree within the range of [0, 360).
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Attachment">
+            
+             Attachment
+            
+             <summary>
+             Represents an attachment file in the PDF document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Attachment.#ctor(System.String)">
+            
+             Attachment
+            
+             <summary>
+             Initializes a new instance of the Attachment class with the
+             specified parameters.
+             </summary>
+            
+             <param name="path">Path of the attached file.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Attachment.#ctor(System.String,System.String)">
+            
+             Attachment
+            
+             <summary>
+             Initializes a new instance of the Attachment class with the
+             specified parameters.
+             </summary>
+            
+             <param name="name">Display name.</param>
+             <param name="path">Path of the attached file.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Attachment.Name">
+            
+             Name
+            
+             <summary>
+             Gets the displayed name of the attached file.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Attachment.Source">
+            
+             Source
+            
+             <summary>
+             Gets the path of the attached file.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Attachment.Length">
+            
+             Length
+            
+             <summary>
+             Gets the data length of the attached file.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Attachment.Data">
+            
+             Data
+            
+             <summary>
+             Gets the data of the attached file in byte unit.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Attachment.Checksum">
+            
+             Checksum
+            
+             <summary>
+             Gets the checksum of attached file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Attachment.GetLength">
+            
+             GetLength
+            
+             <summary>
+             Gets the data length of the attached file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Attachment.GetData">
+            
+             GetData
+            
+             <summary>
+             Gets the data of the attached file in byte unit.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Attachment.GetChecksum">
+            
+             GetChecksum
+            
+             <summary>
+             Gets the checksum of attached file.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Encryption">
+            
+             Encryption
+            
+             <summary>
+             Represents an encryption information of the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.Enabled">
+            
+             Enabled
+            
+             <summary>
+             Gets or sets a value indicating whether the PDF document is
+             encrypted with password.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.OpenWithPassword">
+            
+             OpenWithPassword
+            
+             <summary>
+             Gets or sets a value indicating whether the password is
+             requested when opening the PDF document.
+             </summary>
+            
+             <remarks>
+             If OpenWithPassword is true, you will need to enter the
+             OwnerPassword or UserPassword when opening the PDF file.
+             </remarks>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.OwnerPassword">
+            
+             OwnerPassword
+            
+             <summary>
+             Gets or sets an owner password.
+             </summary>
+            
+             <remarks>
+             The owner password is the master password that is set for the
+             PDF file, and it enables all operations such as re-encryption
+             and changing various permissions.
+             </remarks>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.UserPassword">
+            
+             UserPassword
+            
+             <summary>
+             Gets or sets a user password.
+             </summary>
+            
+             <remarks>
+             The user password represents the password required to open the
+             PDF file.
+             </remarks>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.Method">
+            
+             Method
+            
+             <summary>
+             Gets or sets an encryption method.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Encryption.Permission">
+            
+             Permission
+            
+             <summary>
+             Gets or sets permissions of various operations with the
+             encrypted PDF document.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.EncryptionException">
+            
+             EncryptionException
+            
+             <summary>
+             Represents an exception about the encrypted operations.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.EncryptionException.#ctor(System.String,System.Exception)">
+            
+             EncryptionException
+            
+             <summary>
+             Initializes a new instance of the EncryptionException class
+             with the specified parameters.
+             </summary>
+            
+             <param name="message">Message.</param>
+             <param name="inner">Inner exception object.</param>
+            
+        </member>
+        <member name="T:Cube.Pdf.EncryptionMethod">
+            
+             EncryptionMethod
+            
+             <summary>
+             Specifies the encryption method that is available in the PDF
+             document.
+             </summary>
+            
+             <remarks>
+             The available methods are as follows:
+             -  40bit RC4 (PDF 1.1)
+             - 128bit RC4 (PDF 1.4)
+             - 128bit AES (PDF 1.5)
+             - 256bit AES (PDF 1.7 ExtensionLevel 3)
+             - 256bit AES Revision 6 (Acrobat X)
+             </remarks>
+            
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Unknown">
+            <summary>Unknown</summary>
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Standard40">
+            <summary>Revision 2, 40bit RC4 (supported from PDF 1.1)</summary>
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Standard128">
+            <summary>Revision 3, 128bit RC4 (supported from PDF 1.4)</summary>
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Aes128">
+            <summary>Revision 4, 128bit AES (supported from PDF 1.5)</summary>
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Aes256">
+            <summary>Revision 5, 256bit AES (supported from PDF 1.7 ExtensionLevel 3)</summary>
+        </member>
+        <member name="F:Cube.Pdf.EncryptionMethod.Aes256Ex">
+            <summary>Revision 6, 256bit AES (supported from Acrobat X)</summary>
+        </member>
+        <member name="T:Cube.Pdf.File">
+            
+             File
+            
+             <summary>
+             Represents information of PDF and image files.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.File.#ctor(Cube.FileSystem.EntitySource,System.Boolean)">
+            
+             File
+            
+             <summary>
+             Initializes a new instance of the File class with the specified
+             arguments.
+             </summary>
+            
+             <param name="src">Source file information.</param>
+             <param name="dispose">
+             Value indicating whether to dispose the specified src object
+             after initialization.
+             </param>
+            
+        </member>
+        <member name="P:Cube.Pdf.File.Count">
+            
+             Count
+            
+             <summary>
+             Gets the number of pages.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.File.Resolution">
+            
+             Resolution
+            
+             <summary>
+             Gets the resolution of the PDF or image object.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.IDocumentReader">
+            
+             IDocumentReader
+            
+             <summary>
+             Represents properties and methods to read a document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.IDocumentReader.File">
+            
+             File
+            
+             <summary>
+             Gets a file information of the document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.IDocumentReader.Metadata">
+            
+             Metadata
+            
+             <summary>
+             Gets a PDF metadata of the document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.IDocumentReader.Encryption">
+            
+             Encryption
+            
+             <summary>
+             Gets an encryption settings of the document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.IDocumentReader.Pages">
+            
+             Pages
+            
+             <summary>
+             Gets a collection of pages in the document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.IDocumentReader.Attachments">
+            
+             Attachments
+            
+             <summary>
+             Gets a collection of attached files to the document.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.IDocumentRenderer">
+            
+             IDocumentRenderer
+            
+             <summary>
+             Provides functionality to render the document contents.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentRenderer.Render(System.Drawing.Graphics,Cube.Pdf.Page,System.Drawing.PointF,System.Drawing.SizeF)">
+            
+             Render
+            
+             <summary>
+             Render the Page content to the Graphics object with the
+             specified parameters
+             </summary>
+            
+             <param name="dest">Graphics object.</param>
+             <param name="page">Page object.</param>
+             <param name="point">Start point to render.</param>
+             <param name="size">Rendering size.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentRenderer.Render(Cube.Pdf.Page,System.Drawing.SizeF)">
+            
+             Render
+            
+             <summary>
+             Gets an Image object in which the Page content is rendered.
+             </summary>
+            
+             <param name="page">Page object.</param>
+             <param name="size">Rendering size.</param>
+            
+             <returns>Image object</returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.IDocumentWriter">
+            
+             IDocumentWriter
+            
+             <summary>
+             Represents properties and methods to create or modify a document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Reset">
+            
+             Reset
+            
+             <summary>
+             Resets values.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Save(System.String)">
+            
+             Save
+            
+             <summary>
+             Saves the document to the specified path.
+             </summary>
+            
+             <param name="path">Path to save.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Page})">
+            
+             Add
+            
+             <summary>
+             Adds pages to the document.
+             </summary>
+            
+             <param name="pages">Collection of pages.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Page},Cube.Pdf.IDocumentReader)">
+            
+             Add
+            
+             <summary>
+             Adds pages to the document.
+             </summary>
+            
+             <param name="pages">Collection of pages.</param>
+             <param name="hint">
+             Document reader object to get more detailed information about
+             the specified pages.
+             </param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Attachment})">
+            
+             Add
+            
+             <summary>
+             Adds attached objects to the document.
+             </summary>
+            
+             <param name="files">Collection of attached files.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Set(Cube.Pdf.Metadata)">
+            
+             Set
+            
+             <summary>
+             Sets the PDF metadata.
+             </summary>
+            
+             <param name="metadata">PDF metadata.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.IDocumentWriter.Set(Cube.Pdf.Encryption)">
+            
+             Set
+            
+             <summary>
+             Sets the encryption settings.
+             </summary>
+            
+             <param name="encryption">Encryption settings.</param>
+            
+        </member>
+        <member name="T:Cube.Pdf.ImageFile">
+            
+             ImageFile
+            
+             <summary>
+             Represents information of an image file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImageFile.#ctor(System.String)">
+            
+             ImageFile
+            
+             <summary>
+             Initializes a new instance of the ImageFile class with the
+             specified arguments.
+             </summary>
+            
+             <param name="src">Path of the image file.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImageFile.#ctor(System.String,System.Drawing.Image)">
+            
+             ImageFile
+            
+             <summary>
+             Initializes a new instance of the ImageFile class with the
+             specified arguments.
+             </summary>
+            
+             <param name="src">Path of the image file.</param>
+             <param name="image">Image object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImageFile.#ctor(Cube.Pdf.ImageFile.InitSource)">
+            
+             ImageFile
+            
+             <summary>
+             Initializes a new instance of the ImageFile class with the
+             specified source object.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.ImageFile.InitSource">
+            
+             InitSource
+            
+             <summary>
+             Represents the resources when initialized.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.ImagePageCollection">
+            
+             ImagePageCollection
+            
+             <summary>
+             Represents a read only collection of PDF pages converted from an
+             image file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImagePageCollection.#ctor(System.String)">
+            
+             ImagePageCollection
+            
+             <summary>
+             Initializes a new instance of the ImagePageCollection class with
+             the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the image file.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImagePageCollection.#ctor(System.String,System.Drawing.Image)">
+            
+             ImagePageCollection
+            
+             <summary>
+             Initializes a new instance of the ImagePageCollection class with
+             the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the image file.</param>
+             <param name="image">Image object.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.ImagePageCollection.File">
+            
+             File
+            
+             <summary>
+             Gets the PDF file information.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.ImagePageCollection.Count">
+            
+             Count
+            
+             <summary>
+             Gets the number of pages.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.ImagePageCollection.Item(System.Int32)">
+            
+             Item[int]
+            
+             <summary>
+             Gets the Page object corresponding the specified index.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImagePageCollection.GetEnumerator">
+            
+             GetEnumerator
+            
+             <summary>
+             Returns an enumerator that iterates through this collection.
+             </summary>
+            
+             <returns>
+             An IEnumerator(Page) object for this collection.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImagePageCollection.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the object and
+             optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="M:Cube.Pdf.ImagePageCollection.Setup(System.String,System.Drawing.Image)">
+            
+             Setup
+            
+             <summary>
+             Initializes properties of an ImagePageCollection object.
+             </summary>
+            
+             <param name="src">Path of the image file.</param>
+             <param name="image">Image object.</param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Metadata">
+            
+             Metadata
+            
+             <summary>
+             Represents a metadata in the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Version">
+            
+             Version
+            
+             <summary>
+             Gets or sets a version of the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Author">
+            
+             Author
+            
+             <summary>
+             Gets or sets an author.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Title">
+            
+             Title
+            
+             <summary>
+             Gets or sets a title.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Subject">
+            
+             Subject
+            
+             <summary>
+             Gets or sets a subject.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Keywords">
+            
+             Keywords
+            
+             <summary>
+             Gets or sets a keywords.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Creator">
+            
+             Creator
+            
+             <summary>
+             Gets or sets a name of program that creates the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Producer">
+            
+             Producer
+            
+             <summary>
+             Gets or sets a name of program that creates the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Metadata.Options">
+            
+             Options
+            
+             <summary>
+             Gets or sets a value of viewer options.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.DocumentReaderExtension">
+            
+             DocumentReaderExtension
+            
+             <summary>
+             Provides extended methods of the IDocumentReader class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentReaderExtension.GetPage(Cube.Pdf.IDocumentReader,System.Int32)">
+            
+             GetPage
+            
+             <summary>
+             Gets information corresponding to the specified page number.
+             </summary>
+            
+             <param name="src">IDocumentReader object.</param>
+             <param name="pagenum">
+             Page number; 1 for the first page.
+             </param>
+            
+             <returns>Page object.</returns>
+            
+             <remarks>
+             If IDocumentReader.Pages implements IList(Page) or
+             IReadOnlyList(Page), get page object in O(1) time; otherwise
+             it takes O(n) time to get.
+             </remarks>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.DocumentRendererExtension">
+            
+             DocumentRendererExtension
+            
+             <summary>
+             Describes extended methods for the IDocumentRenderer interface.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentRendererExtension.Render(Cube.Pdf.IDocumentRenderer,System.Drawing.Graphics,Cube.Pdf.Page)">
+            
+             Render
+            
+             <summary>
+             Renders the Page content to the Graphics object.
+             </summary>
+            
+             <param name="src">Renderer object.</param>
+             <param name="dest">Graphics object.</param>
+             <param name="page">Page object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentRendererExtension.Render(Cube.Pdf.IDocumentRenderer,Cube.Pdf.Page)">
+            
+             Render
+            
+             <summary>
+             Gets an Image object in which the Page content is rendered.
+             </summary>
+            
+             <param name="src">Renderer object.</param>
+             <param name="page">Page object.</param>
+            
+             <returns>Image object</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentRendererExtension.Render(Cube.Pdf.IDocumentRenderer,Cube.Pdf.Page,System.Double)">
+            
+             GetImage
+            
+             <summary>
+             Gets an Image object in which the Page content is rendered.
+             </summary>
+            
+             <param name="src">Renderer object.</param>
+             <param name="page">Page object.</param>
+             <param name="scale">Scale factor.</param>
+            
+             <returns>Image object</returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.DocumentWriterExtension">
+            
+             DocumentWriterExtension
+            
+             <summary>
+             Provides extended methods of the IDocumentWriter class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentWriterExtension.Add(Cube.Pdf.IDocumentWriter,Cube.Pdf.Page)">
+            
+             Add
+            
+             <summary>
+             Adds a new page.
+             </summary>
+            
+             <param name="src">IDocumentWriter object.</param>
+             <param name="page">Page information.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentWriterExtension.Add(Cube.Pdf.IDocumentWriter,Cube.Pdf.Page,Cube.Pdf.IDocumentReader)">
+            
+             Add
+            
+             <summary>
+             Adds a new page.
+             </summary>
+            
+             <param name="src">IDocumentWriter object.</param>
+             <param name="page">Page information.</param>
+             <param name="hint">
+             Document reader object to get more detailed information about
+             the specified pages.
+             </param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentWriterExtension.Add(Cube.Pdf.IDocumentWriter,Cube.Pdf.IDocumentReader)">
+            
+             Add
+            
+             <summary>
+             Adds all pages of the specified document.
+             </summary>
+            
+             <param name="src">IDocumentWriter object.</param>
+             <param name="reader">IDocumentReader object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.DocumentWriterExtension.Attach(Cube.Pdf.IDocumentWriter,Cube.Pdf.Attachment)">
+            
+             Attach
+            
+             <summary>
+             Adds a new attached file.
+             </summary>
+            
+             <param name="src">IDocumentWriter object.</param>
+             <param name="file">Attached file.</param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.EncryptionExtension">
+            
+             EncryptionExtension
+            
+             <summary>
+             Describes extended methods for the Encryption class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.EncryptionExtension.Copy(Cube.Pdf.Encryption)">
+            
+             Copy
+            
+             <summary>
+             Gets the copied Encryption.
+             </summary>
+            
+             <param name="src">Original object.</param>
+            
+             <returns>Copied object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.EncryptionExtension.Deny(Cube.Pdf.Encryption)">
+            
+             Deny
+            
+             <summary>
+             Denies all operations.
+             </summary>
+            
+             <param name="src">Encryption object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.EncryptionExtension.Allow(Cube.Pdf.Encryption)">
+            
+             Allow
+            
+             <summary>
+             Allows all operations.
+             </summary>
+            
+             <param name="src">Encryption object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.EncryptionExtension.Set(Cube.Pdf.Encryption,Cube.Pdf.PermissionValue)">
+            
+             Set
+            
+             <summary>
+             Sets all of the methods to the same permission.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.MetadataExtension">
+            
+             MetadataExtension
+            
+             <summary>
+             Describes extended methods for the Metadata class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.MetadataExtension.Copy(Cube.Pdf.Metadata)">
+            
+             Copy
+            
+             <summary>
+             Gets the copied Metadata object.
+             </summary>
+            
+             <param name="src">Original object.</param>
+            
+             <returns>Copied object.</returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.Mixin.PageExtension">
+            
+             PageExtension
+            
+             <summary>
+             Provides extended methods for the Page class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.PageExtension.GetViewSize(Cube.Pdf.Page)">
+            
+             GetViewSize
+            
+             <summary>
+             Gets the display size of this Page.
+             </summary>
+            
+             <param name="src">Page object.</param>
+            
+             <remarks>Display size.</remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Mixin.PageExtension.GetViewSize(Cube.Pdf.Page,System.Double)">
+            
+             GetViewSize
+            
+             <summary>
+             Gets the display size of this Page from the specified values.
+             </summary>
+            
+             <param name="src">Page object.</param>
+             <param name="scale">Scale factor.</param>
+            
+             <remarks>Display size.</remarks>
+            
+        </member>
+        <member name="T:Cube.Pdf.Page">
+            
+             Page
+            
+             <summary>
+             Represents information of a document page, and some more user
+             extended values.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Page.#ctor">
+            
+             Page
+            
+             <summary>
+             Initializes a new instance of the Page class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Page.#ctor(Cube.Pdf.PageBase)">
+            
+             Page
+            
+             <summary>
+             Initializes a new instance of the Page class with the specified
+             source.
+             </summary>
+            
+             <param name="src">Source page information.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Page.Delta">
+            
+             Delta
+            
+             <summary>
+             Gets or sets the angle you rotate this Page.
+             </summary>
+            
+             <remarks>
+             The rotation result of this Page is calculated by
+             Rotation + Delta.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Page.Reset">
+            
+             Reset
+            
+             <summary>
+             Reset the values of editable properties.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Page.OnReset">
+            
+             OnReset
+            
+             <summary>
+             Reset the values of editable properties.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.PageBase">
+            
+             PageBase
+            
+             <summary>
+             Represents information of a document page.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PageBase.File">
+            
+             File
+            
+             <summary>
+             Get the file information that owns this Page.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PageBase.Number">
+            
+             Number
+            
+             <summary>
+             Get the page number.
+             </summary>
+            
+             <remarks>
+             1 for first page.
+             </remarks>
+            
+        </member>
+        <member name="P:Cube.Pdf.PageBase.Rotation">
+            
+             Rotation
+            
+             <summary>
+             Get the rotation of this Page.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PageBase.Resolution">
+            
+             Resolution
+            
+             <summary>
+             Get the horizontal and vertical resolution (dpi) of this Page.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PageBase.Size">
+            
+             Size
+            
+             <summary>
+             Get the page size.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.PdfFile">
+            
+             PdfFile
+            
+             <summary>
+             Represents information of a PDF file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfFile.#ctor(System.String)">
+            
+             PdfFile
+            
+             <summary>
+             Initializes a new instance of the PdfFile class with the
+             specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfFile.Point">
+            
+             Point
+            
+             <summary>
+             Gets the DPI value of the "Point" unit.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfFile.Password">
+            
+             Password
+            
+             <summary>
+             Gets or sets the owner or user password.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfFile.FullAccess">
+            
+             FullAccess
+            
+             <summary>
+             Gets or sets the value indicating whether you can access
+             all contents of the PDF document.
+             </summary>
+            
+             <remarks>
+             This property will be set to false if the PDF file is encrypted
+             with a password and the file is opened with the user password.
+             </remarks>
+            
+        </member>
+        <member name="T:Cube.Pdf.PdfVersion">
+            
+             PdfVersion
+            
+             <summary>
+             Represents PDF version.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfVersion.#ctor">
+            
+             PdfVersion
+            
+             <summary>
+             Initializes a new instance of the PdfVersion class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfVersion.#ctor(System.Int32,System.Int32)">
+            
+             PdfVersion
+            
+             <summary>
+             Initializes a new instance of the PdfVersion class with the
+             specified values.
+             </summary>
+            
+             <param name="major">Major version.</param>
+             <param name="minor">Minor version.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfVersion.#ctor(System.Int32,System.Int32,System.Int32)">
+            
+             PdfVersion
+            
+             <summary>
+             Initializes a new instance of the PdfVersion class with the
+             specified values.
+             </summary>
+            
+             <param name="major">Major version.</param>
+             <param name="minor">Minor version.</param>
+             <param name="extension">Extension level.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfVersion.#ctor(System.String,System.Int32,System.Int32,System.Int32)">
+            
+             PdfVersion
+            
+             <summary>
+             Initializes a new instance of the PdfVersion class with the
+             specified values.
+             </summary>
+            
+             <param name="subset">PDF subset name.</param>
+             <param name="major">Major version.</param>
+             <param name="minor">Minor version.</param>
+             <param name="extension">Extension level.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfVersion.Subset">
+            
+             Subset
+            
+             <summary>
+             Gets or sets a value that represents PDF subset.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfVersion.Major">
+            
+             Major
+            
+             <summary>
+             Gets or sets the major number of PDF version.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfVersion.Minor">
+            
+             Minor
+            
+             <summary>
+             Gets or sets the minor number of PDF version.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.PdfVersion.ExtensionLevel">
+            
+             ExtensionLevel
+            
+             <summary>
+             Gets or sets the extension level of PDF version.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.PdfVersion.ToString">
+            
+             ToString
+            
+             <summary>
+             Gets a description of PDF version.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Permission">
+            
+             Permission
+            
+             <summary>
+             Represents permissions of various operations with the encrypted
+             PDF document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.#ctor">
+            
+             Permission
+            
+             <summary>
+             Initializes a new instance of the Permission class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.#ctor(System.Int64)">
+            
+             Permission
+            
+             <summary>
+             Initializes a new instance of the Permission class with the
+             specified value.
+             </summary>
+            
+             <param name="src">Value for permissions.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.Print">
+            
+             Print
+            
+             <summary>
+             Gets or sets a permission for printing.
+             </summary>
+            
+             <remarks>
+             The PermissionMethod.Restrict value may be used only in
+             the Print property.
+             </remarks>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.ModifyContents">
+            
+             ModifyContents
+            
+             <summary>
+             Gets or sets a permission for modifying the contents of the PDF
+             document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.CopyContents">
+            
+             CopyContents
+            
+             <summary>
+             Gets or sets a permission for coping or otherwise extracting
+             text and graphics from the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.Accessibility">
+            
+             Accessibility
+            
+             <summary>
+             Gets or sets a permission for extracting text and graphics
+             in support of accessibility to users with disabilities or
+             for other purposes.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.ModifyAnnotations">
+            
+             ModifyAnnotations
+            
+             <summary>
+             Gets or sets a permission for adding or modifying text
+             annotations, fill in interactive form fields.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.InputForm">
+            
+             InputForm
+            
+             <summary>
+             Gets or sets a permission for filling in existing interactive
+             form fields (including signature fields).
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Permission.Value">
+            
+             Value
+            
+             <summary>
+             Gets or sets the raw value that represents permissions of
+             all operations.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.GetPermission(Cube.Pdf.PermissionFlags)">
+            
+             GetPermission
+            
+             <summary>
+             Gets the permission for the specified operation.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.GetPermission(Cube.Pdf.PermissionFlags,Cube.Pdf.PermissionFlags)">
+            
+             GetPermission
+            
+             <summary>
+             Gets the permission for the specified operations.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.GetPrintPermission">
+            
+             GetPrintPermission
+            
+             <summary>
+             Gets the permission for printing.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.GetModifyContentsPermission">
+            
+             GetModifyContentsPermission
+            
+             <summary>
+             Gets the permission for modifying contents.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.SetPermission(Cube.Pdf.PermissionFlags@,Cube.Pdf.PermissionFlags,System.String)">
+            
+             SetPermission
+            
+             <summary>
+             Sets the value of the specified permission.
+             </summary>
+            
+             <remarks>
+             The PropertyChanged event is also fired for the Value property
+             when various properties are changed.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.SetPermission(Cube.Pdf.PermissionFlags,Cube.Pdf.PermissionValue,System.String)">
+            
+             SetPermission
+            
+             <summary>
+             Sets the value of the specified permission.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.SetPrintPermission(Cube.Pdf.PermissionValue)">
+            
+             SetPrintPermission
+            
+             <summary>
+             Sets the value for printing permission.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Permission.SetModifyContentsPermission(Cube.Pdf.PermissionValue)">
+            
+             SetModifyContentsPermission
+            
+             <summary>
+             Sets the value for modifying contents permission.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.PermissionValue">
+            
+             PermissionValue
+            
+             <summary>
+             Specifies the permission method for operations.
+             </summary>
+            
+        </member>
+        <member name="F:Cube.Pdf.PermissionValue.Deny">
+            <summary>Operation is denied.</summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionValue.Restrict">
+            <summary>Part of the operation is allowed.</summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionValue.Allow">
+            <summary>Operation is allowed.</summary>
+        </member>
+        <member name="T:Cube.Pdf.PermissionValueExtension">
+            
+             PermissionValueExtension
+            
+             <summary>
+             Provides extended methods of the PermissionValue enum.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.PermissionValueExtension.IsAllowed(Cube.Pdf.PermissionValue)">
+            
+             IsAllowed
+            
+             <summary>
+             Determines whether the specified operation is allowed.
+             </summary>
+            
+             <param name="src">PermissionMethod object.</param>
+            
+             <returns>true for allowed.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.PermissionValueExtension.IsDenid(Cube.Pdf.PermissionValue)">
+            
+             IsDenid
+            
+             <summary>
+             Determines whether the specified operation is denied.
+             </summary>
+            
+             <param name="src">PermissionMethod object.</param>
+            
+             <returns>true for denied.</returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.PermissionFlags">
+            
+             PermissionFlags
+            
+             <summary>
+             Specifies the permission flags for operations.
+             </summary>
+            
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.All">
+            <summary>All operations are allowed.</summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.Reserved">
+            <summary>
+            7, 8, 13-32 bit must be set
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.Print">
+            <summary>
+            Print the document (possibly not at the highest quality level,
+            depending on whether bit 12 is also set).
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.PrintHighQuality">
+            <summary>
+            Print the document at the highest quality level.
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.ModifyContents">
+            <summary>
+            Modify the contents of the document by operations other than
+            those controlled by bits 6, 9, and 11.
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.CopyOrExtractContents">
+            <summary>
+            Copy or otherwise extract text and graphics from the document
+            by operations other than that controlled by bit 10.
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.ModifyAnnotations">
+            <summary>
+            Add or modify text annotations, fill in interactive form fields,
+            and, if bit 4 is also set, create or modify interactive
+            form fields (including signature fields).
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.InputForm">
+            <summary>
+            Fill in existing interactive form fields (including signature
+            fields), even if bit 6 is clear.
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.ExtractContentsForAccessibility">
+            <summary>
+            Extract text and graphics (in support of accessibility to users
+            with disabilities or for other purposes).
+            </summary>
+        </member>
+        <member name="F:Cube.Pdf.PermissionFlags.Assemble">
+            <summary>
+            Assemble the document (insert, rotate, or delete pages and
+            create bookmarks or thumbnail images), even if bit 4 is clear.
+            </summary>
+        </member>
+        <member name="T:Cube.Pdf.ViewerOption">
+            
+             ViewerOption
+            
+             <summary>
+             Specifies the display options of the PDF document.
+             </summary>
+            
+             <remarks>
+             PageOnly = 0x0040 shall be replaced by None.
+             </remarks>
+            
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.None">
+            <summary>No options.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.SinglePage">
+            <summary>Single page.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.OneColumn">
+            <summary>One column.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.TwoColumnLeft">
+            <summary>Two column (left)</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.TwoColumnRight">
+            <summary>Two column (right)</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.TwoPageLeft">
+            <summary>Two page (left)</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.TwoPageRight">
+            <summary>Two page (right)</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.Outline">
+            <summary>Shows outline.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.Thumbnail">
+            <summary>Shows thumbnail of the pages.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.FullScreen">
+            <summary>Full screen mode.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.OptionalContent">
+            <summary>Shows optional contents.</summary>
+        </member>
+        <member name="F:Cube.Pdf.ViewerOption.Attachment">
+            <summary>Shows attached objects.</summary>
+        </member>
+        <member name="T:Cube.Pdf.ViewerOptionFactory">
+            
+             ViewerOptionFactory
+            
+             <summary>
+             Provides extended methods of the ViewerOption.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.ViewerOptionFactory.Create(System.Int32)">
+            
+             Create
+            
+             <summary>
+             Creates a new ViewerOption value from the specified value.
+             </summary>
+            
+             <param name="src">Value for options.</param>
+            
+             <returns>ViewerOption objects.</returns>
+            
+             <remarks>
+             Ignores flags that do not define in the ViewerOption.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.ViewerOptionFactory.Create(System.String,System.String)">
+            
+             Create
+            
+             <summary>
+             Creates a new ViewerOption value from the specified arguments.
+             </summary>
+            
+             <param name="layout">PDF name for the page layout.</param>
+             <param name="mode">PDF name for the page mode.</param>
+            
+             <returns>ViewerOption objects.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.ViewerOptionFactory.ToPageLayout(Cube.Pdf.ViewerOption)">
+            
+             ToPageLayout
+            
+             <summary>
+             Converts to the page layout option fromt the specified viewer
+             option.
+             </summary>
+            
+             <param name="src">Viewer options.</param>
+            
+             <returns>Page layout option.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.ViewerOptionFactory.ToPageMode(Cube.Pdf.ViewerOption)">
+            
+             ToPageLayout
+            
+             <summary>
+             Converts to the page mode option fromt the specified viewer
+             option.
+             </summary>
+            
+             <param name="src">Viewer options.</param>
+            
+             <returns>Page mode option.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.ViewerOptionFactory.ToName(Cube.Pdf.ViewerOption)">
+            
+             ToName
+            
+             <summary>
+             Converts to the PDF name fromt the specified viewer option.
+             </summary>
+            
+             <param name="src">Viewer options.</param>
+            
+             <returns>PDF name.</returns>
+            
+             <remarks>
+             If the specified value has more than one ViewerOption enum,
+             the first matching string will be returned.
+             </remarks>
+            
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            
+             IsExternalInit
+            
+             <summary>
+             Provides init accessor of properties.
+             </summary>
+            
+        </member>
+    </members>
+</doc>

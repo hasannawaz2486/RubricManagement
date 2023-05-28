@@ -1,0 +1,1348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cube.Pdf.Itext</name>
+    </assembly>
+    <members>
+        <member name="T:Cube.Pdf.Itext.DocumentReader">
+            
+             DocumentReader
+            
+             <summary>
+             Provides functionality to read a PDF document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String)">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String,System.String)">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="password">Password string.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String,System.String,Cube.Pdf.Itext.OpenOption)">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="password">Password string.</param>
+             <param name="options">Open options.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String,Cube.IQuery{System.String})">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="query">Password query.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String,Cube.IQuery{System.String},Cube.Pdf.Itext.OpenOption)">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="query">Password query.</param>
+             <param name="options">Open options.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.#ctor(System.String,Cube.Pdf.Itext.Password,Cube.Pdf.Itext.OpenOption)">
+            
+             DocumentReader
+            
+             <summary>
+             Initializes a new instance of the DocumentReader class
+             with the specified arguments.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="password">Password query or string.</param>
+             <param name="options">Open options.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.File">
+            
+             File
+            
+             <summary>
+             Gets the information of the target file.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Metadata">
+            
+             Metadata
+            
+             <summary>
+             Gets the PDF metadata.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Encryption">
+            
+             Encryption
+            
+             <summary>
+             Gets the encryption information of the PDF document.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Pages">
+            
+             Pages
+            
+             <summary>
+             Gets the page collection.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Attachments">
+            
+             Attachments
+            
+             <summary>
+             Gets the attachment collection.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Options">
+            
+             Options
+            
+             <summary>
+             Get the options when the provided PDF file is opened.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentReader.Core">
+            
+             Core
+            
+             <summary>
+             Gets the core object.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentReader.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the DocumentReader
+             and optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.DocumentSplitter">
+            
+             DocumentSplitter
+            
+             <summary>
+             Provides functionality to save the PDF document in page by page.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentSplitter.#ctor">
+            
+             DocumentSplitter
+            
+             <summary>
+             Initializes a new instance of the DocumentSplitter class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentSplitter.#ctor(Cube.Pdf.Itext.SaveOption)">
+            
+             DocumentSplitter
+            
+             <summary>
+             Initializes a new instance of the DocumentSplitter class with
+             the specified options.
+             </summary>
+            
+             <param name="options">Saving options.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentSplitter.Results">
+            
+             Results
+            
+             <summary>
+             Gets the collection of saved paths.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentSplitter.OnReset">
+            
+             OnReset
+            
+             <summary>
+             Executes the reset operation.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentSplitter.OnSave(System.String)">
+            
+             OnSave
+            
+             <summary>
+             Executes the save operation.
+             </summary>
+            
+             <remarks>
+             Reset() will erase the Results, so we use OnReset() instead.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentSplitter.Unique(System.String,Cube.Pdf.File,System.Int32)">
+            
+             Unique
+            
+             <summary>
+             Gets a unique path.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.DocumentWriter">
+            
+             DocumentWriter
+            
+             <summary>
+             Provides functionality to create or modify a PDF document.
+             </summary>
+            
+             <remarks>
+             DocumentWriter realizes the page rotation information
+             (Page.Rotation.Delta) by modifying the internal object of
+             DocumentReader. However, if DocumentReader is generated with
+             OpenOption.ReduceMemory enabled, this change will be disabled and
+             the result of the page rotation change cannot be reflected.
+             If you have rotated the page, please set the corresponding option
+             to disabled.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriter.#ctor">
+            
+             DocumentWriter
+            
+             <summary>
+             Initializes a new instance of the DocumentWriter class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriter.#ctor(Cube.Pdf.Itext.SaveOption)">
+            
+             DocumentWriter
+            
+             <summary>
+             Initializes a new instance of the DocumentWriter class with
+             the specified options.
+             </summary>
+            
+             <param name="options">Saving options.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriter.OnSave(System.String)">
+            
+             OnSave
+            
+             <summary>
+             Executes the save operation.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.DocumentWriterBase">
+            
+             DocumentWriterBase
+            
+             <summary>
+             Provides an implementation of the IDocumentWriter interface by
+             using the iTextSharp.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.#ctor(Cube.Pdf.Itext.SaveOption)">
+            
+             DocumentWriterBase
+            
+             <summary>
+             Initializes a new instance of the DocumentWriterBase class
+             with the specified options.
+             </summary>
+            
+             <param name="options">Saving options.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentWriterBase.Pages">
+            
+             Pages
+            
+             <summary>
+             Gets the collection of pages.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentWriterBase.Attachments">
+            
+             Attachments
+            
+             <summary>
+             Gets the collection of attached files.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentWriterBase.Metadata">
+            
+             Metadata
+            
+             <summary>
+             Gets the PDF metadata.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentWriterBase.Encryption">
+            
+             Encryption
+            
+             <summary>
+             Gets the encryption settings.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.DocumentWriterBase.Options">
+            
+             Options
+            
+             <summary>
+             Gets the options when saving the PDF file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Reset">
+            
+             Reset
+            
+             <summary>
+             Resets values.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Save(System.String)">
+            
+             Save
+            
+             <summary>
+             Saves the document to the specified path.
+             </summary>
+            
+             <param name="path">Path to save.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Page})">
+            
+             Add
+            
+             <summary>
+             Adds pages to the document.
+             </summary>
+            
+             <param name="pages">Collection of pages.</param>
+            
+             <remarks>
+             Use the Add(IEnumerable{Page}, IDocumentReader) method to specify
+             the DocumentReader.Pages object.
+             </remarks>
+            
+             <see cref="M:Cube.Pdf.Itext.DocumentWriterBase.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Page},Cube.Pdf.IDocumentReader)"/>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Page},Cube.Pdf.IDocumentReader)">
+            
+             Add
+            
+             <summary>
+             Adds pages to the document.
+             </summary>
+            
+             <param name="pages">Collection of pages.</param>
+             <param name="hint">
+             Document reader object to get more detailed information about
+             the specified pages.
+             </param>
+            
+             <remarks>
+             The ownership of the IDocumentReader object will be transferred
+             to this class, and Dispose will be executed automatically.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Attachment})">
+            
+             Add
+            
+             <summary>
+             Adds attached objects to the document.
+             </summary>
+            
+             <param name="files">Collection of attached files.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Set(Cube.Pdf.Metadata)">
+            
+             Set
+            
+             <summary>
+             Sets the PDF metadata.
+             </summary>
+            
+             <param name="src">PDF metadata.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Set(Cube.Pdf.Encryption)">
+            
+             Set
+            
+             <summary>
+             Sets the encryption settings.
+             </summary>
+            
+             <param name="src">Encryption settings.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.OnSave(System.String)">
+            
+             OnSave
+            
+             <summary>
+             Executes the save operation.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.OnReset">
+            
+             OnReset
+            
+             <summary>
+             Executes the reset operation.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Bind(Cube.Pdf.IDocumentReader)">
+            
+             Bind
+            
+             <summary>
+             Binds the specified document reader to the class.
+             </summary>
+            
+             <param name="src">Document reader.</param>
+            
+             <remarks>
+             The specified DocumentReader object will transfer ownership to
+             the DocumentWriter object, and processes such as Dispose will be
+             executed automatically.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Release">
+            
+             Release
+            
+             <summary>
+             Releases all bound objects.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.GetRawReader(Cube.Pdf.File)">
+            
+             GetRawReader
+            
+             <summary>
+             Gets the PdfReader corresponding to the specified File.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.DocumentWriterBase.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the object
+             and optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.EmbeddedAttachment">
+            
+             EmbeddedAttachment
+            
+             <summary>
+             Represents an file attached to a PDF document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EmbeddedAttachment.#ctor(System.String,System.String,iTextSharp.text.pdf.PRStream)">
+            
+             Attachment
+            
+             <summary>
+             Initializes a new instance of the Attachment class with the
+             specified arguments.
+             </summary>
+            
+             <param name="name">Name of attached file.</param>
+             <param name="src">Path of the PDF document.</param>
+             <param name="core">Core object.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EmbeddedAttachment.GetLength">
+            
+             GetLength
+            
+             <summary>
+             Gets the data length of the attached file.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EmbeddedAttachment.GetData">
+            
+             GetData
+            
+             <summary>
+             Gets the data of the attached file in byte unit.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EmbeddedAttachment.GetChecksum">
+            
+             GetChecksum
+            
+             <summary>
+             Gets the checksum of attached file.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.AttachmentCollection">
+            
+             AttachmentCollection
+            
+             <summary>
+             Represents the collection of attached files.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.AttachmentCollection.#ctor(iTextSharp.text.pdf.PdfReader,Cube.Pdf.PdfFile)">
+            
+             AttachmentCollection
+            
+             <summary>
+             Initializes a new instance of the AttachmentCollection class
+             with the specified arguments.
+             </summary>
+            
+             <param name="core">PdfReader object.</param>
+             <param name="file">Information of the PDF file.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.AttachmentCollection.File">
+            
+             File
+            
+             <summary>
+             Gets the file information of the PDF document.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.AttachmentCollection.GetEnumerator">
+            
+             GetEnumerator
+            
+             <summary>
+             Returns an enumerator that iterates through this collection.
+             </summary>
+            
+             <returns>
+             An IEnumerator(Attachment) object for this collection.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.AttachmentCollection.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the object and
+             optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.AttachmentCollection.Parse">
+            
+             Parse
+            
+             <summary>
+             Gets the attachment objects from the PdfReader.
+             </summary>
+            
+             <remarks>
+             /EmbededFiles, /Names で取得できる配列は、以下のような構造に
+             なっています。
+            
+             [String, Object, String, Object, ...]
+            
+             この内、各 Object が、添付ファイルに関する実際の情報を保持
+             しています。そのため、間の String 情報をスキップする必要が
+             あります。
+             </remarks>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.EnumerableExtension">
+            
+             EnumerableExtension
+            
+             <summary>
+             Provides extended methods of the IEnumerable(T) class.
+             </summary>
+            
+             <remarks>
+             The code is derived from the following URL:
+             https://github.com/dotnet/docs/blob/main/samples/snippets/csharp/concepts/linq/how-to-group-results-by-contiguous-keys_1.cs
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.ChunkBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            
+             ChunkBy
+            
+             <summary>
+             Groups elements into chunks that represent subsequences of
+             contiguous keys.
+             </summary>
+            
+             <param name="src">Source sequence.</param>
+             <param name="selector">Key selector.</param>
+            
+             <returns>
+             A collection of elements.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.ChunkBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            
+             ChunkBy
+            
+             <summary>
+             Groups elements into chunks that represent subsequences of
+             contiguous keys.
+             </summary>
+            
+             <param name="src">Source sequence.</param>
+             <param name="selector">Key selector.</param>
+             <param name="comparer">Key comparer.</param>
+            
+             <returns>
+             A collection of elements.
+             </returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.EnumerableExtension.Chunk`2">
+            
+             Chunk
+            
+             <summary>
+             A Chunk is a contiguous group of one or more source elements
+             that have the same key. A Chunk has a key and a list of
+             ChunkItem objects, which are copies of the elements in the source
+             sequence.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.#ctor(`0,System.Collections.Generic.IEnumerator{`1},System.Func{`1,System.Boolean})">
+            
+             Chunk
+            
+             <summary>
+             Initializes a new instance of the Chunk class with the specified
+             arguments.
+             </summary>
+            
+             <param name="key">Key of the chunk.</param>
+             <param name="enumerator">Source enumerator.</param>
+             <param name="predicate">
+             Value indicating whether the key of the provided source is
+             contiguous.
+             </param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.Key">
+            
+             Key
+            
+             <summary>
+             Gets the key of the group.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.GetEnumerator">
+            
+             GetEnumerator
+            
+             <summary>
+             Invoked by the inner foreach loop. This method stays just one
+             step ahead of the client requests. It adds the next element of
+             the chunk only after the clients requests the last element in the
+             list so far.
+             </summary>
+            
+             <returns>
+             Enumerator that can be used to iterate through the collection.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.System#Collections#IEnumerable#GetEnumerator">
+            
+             GetEnumerator
+            
+             <summary>
+             Returns an enumerator that iterates through a collection.
+             </summary>
+            
+             <returns>
+             IEnumerator object that can be used to iterate through the
+             collection.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.CopyAllChunkElements">
+            
+             CopyAllChunkElements
+            
+             <summary>
+             Called after the end of the last chunk was reached. It first checks
+             whether there are more elements in the source sequence.
+             </summary>
+            
+             <returns>true if enumerator for this chunk was exhausted.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.DoneCopyingChunk">
+            
+             DoneCopyingChunk
+            
+             <summary>
+             Indicates that all chunk elements have been copied to the list of
+             ChunkItems, and the source enumerator is either at the end, or else
+             on an element with a new key. The tail of the linked list is set to
+             null in the CopyNextChunkElement method if the key of the next
+             element does not match the current chunk's key, or there are no more
+             elements in the source.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.CopyNextChunkElement">
+            
+             CopyNextChunkElement
+            
+             <summary>
+             Adds one ChunkItem to the current group
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.EnumerableExtension.Chunk`2.ChunkItem">
+            
+             ChunkItem
+            
+             <summary>
+             A Chunk has a linked list of ChunkItems, which represent the
+             elements in the current chunk. Each ChunkItem has a reference
+             to the next ChunkItem in the list.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.PageCollection">
+            
+             PageCollection
+            
+             <summary>
+             Represents a read only collection of PDF pages.
+             </summary>
+            
+             <remarks>
+             IReadOnlyList(Page) implementations is for the GetPage extended
+             method.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.PageCollection.#ctor(iTextSharp.text.pdf.PdfReader,Cube.Pdf.PdfFile)">
+            
+             PageCollection
+            
+             <summary>
+             Initializes a new instance of the PageCollection class with
+             the specified arguments.
+             </summary>
+            
+             <param name="core">PdfReader object.</param>
+             <param name="file">PDF file information.</param>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.PageCollection.File">
+            
+             File
+            
+             <summary>
+             Gets the PDF file information.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.PageCollection.Count">
+            
+             Count
+            
+             <summary>
+             Gets the number of pages.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.PageCollection.Item(System.Int32)">
+            
+             Item[int]
+            
+             <summary>
+             Gets the Page object corresponding the specified index.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.PageCollection.GetEnumerator">
+            
+             GetEnumerator
+            
+             <summary>
+             Returns an enumerator that iterates through this collection.
+             </summary>
+            
+             <returns>
+             An IEnumerator(Page) object for this collection.
+             </returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.PageCollection.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the object and
+             optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.Password">
+            
+             Password
+            
+             <summary>
+             Represents the password string or query.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Password.#ctor(Cube.IQuery{System.String},System.String)">
+            
+             Password
+            
+             <summary>
+             Initializes a new instance of the Password class with the
+             specified arguments.
+             </summary>
+            
+             <param name="query">Password query.</param>
+             <param name="value">Initial password value.</param>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.Reader">
+            
+             Reader
+            
+             <summary>
+             Provides factory and other static methods about PdfReader.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.From(System.IDisposable)">
+            
+             From
+            
+             <summary>
+             Converts the specified object to the PdfReader object.
+             </summary>
+            
+             <param name="src">Source object.</param>
+            
+             <returns>PdfReader object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.From(Cube.Pdf.File,Cube.Pdf.Itext.OpenOption)">
+            
+             FromPdf
+            
+             <summary>
+             Creates a new instance of the PdfReader class with the specified
+             arguments.
+             </summary>
+            
+             <param name="src">Source File object.</param>
+             <param name="options">Open options.</param>
+            
+             <returns>PdfReader object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.From(System.String,Cube.Pdf.Itext.Password,Cube.Pdf.Itext.OpenOption)">
+            
+             From
+            
+             <summary>
+             Creates a new instance of the PdfReader class.
+             </summary>
+            
+             <param name="src">Path of the PDF file.</param>
+             <param name="password">Password string or query.</param>
+             <param name="options">Open options.</param>
+            
+             <returns>PdfReader object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.FromImage(System.String)">
+            
+             FromImage
+            
+             <summary>
+             Creates a new instance of the PdfReader class from the
+             specified image.
+             </summary>
+            
+             <param name="src">Path of the image.</param>
+            
+             <returns>PdfReader object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.Convert(System.Drawing.Image)">
+            
+             Convert
+            
+             <summary>
+             Converts from System.Drawing.Image to iTextSharp.text.Image.
+             </summary>
+            
+             <param name="src">Source image.</param>
+            
+             <returns>Converted image.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Reader.Request(Cube.IQuery{System.String},System.String)">
+            
+             Request
+            
+             <summary>
+             Requests the password of the specified PDF file.
+             </summary>
+            
+             <param name="query">Query object.</param>
+             <param name="src">Path of the PDF file.</param>
+            
+             <returns>Query result.</returns>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.ReaderExtension">
+            
+             ReaderExtension
+            
+             <summary>
+             Provides extended methods of the PdfReader class.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetFile(iTextSharp.text.pdf.PdfReader,System.String,System.String)">
+            
+             GetFile
+            
+             <summary>
+             Gets the PdfFile object from the specified arguments.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="file">Path of the source PDF file.</param>
+             <param name="password">Password of the source PDF file.</param>
+            
+             <returns>Page object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetPage(iTextSharp.text.pdf.PdfReader,Cube.Pdf.PdfFile,System.Int32)">
+            
+             GetPage
+            
+             <summary>
+             Gets the Page object from the specified arguments.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="file">PDF file information.</param>
+             <param name="pagenum">Page number</param>
+            
+             <returns>Page object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetMetadata(iTextSharp.text.pdf.PdfReader)">
+            
+             GetMetadata
+            
+             <summary>
+             Gets the Metadata object from the specified reader.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+            
+             <returns>Metadata object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetEncryption(iTextSharp.text.pdf.PdfReader,Cube.Pdf.PdfFile)">
+            
+             GetEncryption
+            
+             <summary>
+             Gets the Encryption object from the specified arguments.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="file">PDF file information.</param>
+            
+             <returns>Encryption object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetEncryptionMethod(iTextSharp.text.pdf.PdfReader)">
+            
+             GetEncryptionMethod
+            
+             <summary>
+             Gets the encryption method from the specified reader.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+            
+             <returns>Encryption method.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetUserPassword(iTextSharp.text.pdf.PdfReader,Cube.Pdf.PdfFile)">
+            
+             GetUserPassword
+            
+             <summary>
+             Gets the user password from the specified arguments.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="file">PDF file information.</param>
+            
+             <returns>User password.</returns>
+            
+             <remarks>
+             If the encryption method is AES256, the analysis of the user
+             password will fail, so it is excluded.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetOutlines(iTextSharp.text.pdf.PdfReader,System.Int32,System.Int32,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            
+             GetOutlines
+            
+             <summary>
+             Gets the collection of outlines embedded in the specified
+             PDF document.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="pagenum">Page number.</param>
+             <param name="delta">
+             Difference in page numbers between PDF documents.
+             </param>
+             <param name="dest">Container for the result.</param>
+            
+             <remarks>
+             Invokes processing on the bookmark information retrieved from
+             the PdfReader object after shifting the page number by delta.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.Rotate(iTextSharp.text.pdf.PdfReader,Cube.Pdf.Page)">
+            
+             Rotate
+            
+             <summary>
+             Updates the rotation information of the specified PdfReader
+             object according to the specified Page object.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="page">Page object.</param>
+            
+             <remarks>
+             When rotating a PDF page, it is easiest to update the content of
+             the PdfReader object and then copy it with a PdfCopy object, etc.,
+             so this method is used.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.Convert(System.Exception)">
+            
+             Convert
+            
+             <summary>
+             Converts the specified exception object to the corresponding
+             object.
+             </summary>
+            
+             <param name="src">Exception object.</param>
+            
+             <returns>Converted exception object.</returns>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.ReaderExtension.GetPageSize(iTextSharp.text.pdf.PdfReader,System.Int32)">
+            
+             GetPageSize
+            
+             <summary>
+             Gets the page size of the specified page number.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.Writer">
+            
+             Writer
+            
+             <summary>
+             Provides factory and other static methods about PdfWriter.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.#ctor(System.String,Cube.Pdf.Itext.SaveOption,Cube.Pdf.Metadata,Cube.Pdf.Encryption)">
+            
+             Writer
+            
+             <summary>
+             Initializes a new instance of the Writer class with the
+             specified arguments.
+             </summary>
+            
+             <param name="path">Path of the PDF document.</param>
+             <param name="options">Save options.</param>
+             <param name="metadata">PDF metadata.</param>
+             <param name="crypt">PDF encryption settings.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.Add(System.IDisposable,Cube.Pdf.Page)">
+            
+             Add
+            
+             <summary>
+             Adds the specified page to the specified writer.
+             </summary>
+            
+             <param name="src">PdfReader object.</param>
+             <param name="page">Page object.</param>
+            
+             <remarks>
+             Note that the value of PdfCopy.PageNumber is automatically
+             incremented as soon as AddPage is executed.
+             </remarks>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.Add(System.IDisposable,System.Collections.Generic.IEnumerable{Cube.Pdf.Page})">
+            
+             Add
+            
+             <summary>
+             Adds the specified page to the writer.
+             </summary>
+            
+             <param name="src">iText reader.</param>
+             <param name="pages">Page collection.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.Add(System.Collections.Generic.IEnumerable{Cube.Pdf.Attachment})">
+            
+             Set
+            
+             <summary>
+             Sets attachments to the specified writer.
+             </summary>
+            
+             <param name="data">Collection of attachments.</param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.Dispose(System.Boolean)">
+            
+             Dispose
+            
+             <summary>
+             Releases the unmanaged resources used by the DocumentReader
+             and optionally releases the managed resources.
+             </summary>
+            
+             <param name="disposing">
+             true to release both managed and unmanaged resources;
+             false to release only unmanaged resources.
+             </param>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.Stamp">
+            
+             Stamp
+            
+             <summary>
+             Adds the specified information to the source PDF file and save
+             to the specified path.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.SetEncryption(iTextSharp.text.pdf.PdfWriter)">
+            
+             SetEncryption
+            
+             <summary>
+             Sets the encryption settings to the specified writer.
+             </summary>
+            
+        </member>
+        <member name="M:Cube.Pdf.Itext.Writer.GetMethod(Cube.Pdf.EncryptionMethod)">
+            
+             GetMethod
+            
+             <summary>
+             Gets the value corresponding to the specified method.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.OpenOption">
+            
+             OpenOption
+            
+             <summary>
+             Represents the options to open a PDF file with a DocumentReader
+             object.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.OpenOption.FullAccess">
+            
+             FullAccess
+            
+             <summary>
+             Gets or sets a value indicating whether to open with fully
+             accessible.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.OpenOption.SaveMemory">
+            
+             SaveMemory
+            
+             <summary>
+             Gets or sets a value indicating whether to access the provided
+             PDF file in memory saving mode.
+             </summary>
+            
+        </member>
+        <member name="T:Cube.Pdf.Itext.SaveOption">
+            
+             SaveOption
+            
+             <summary>
+             Represents the options to save a PDF file with a DocumentWriter
+             object.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.SaveOption.ShrinkResources">
+            
+             ShrinkResources
+            
+             <summary>
+             Gets or sets a value indicating whether to shrink deduplicated
+             resources.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.SaveOption.KeepOutlines">
+            
+             KeepOutlines
+            
+             <summary>
+             Gets or sets a value indicating whether to keep the outlines of
+             source files.
+             </summary>
+            
+        </member>
+        <member name="P:Cube.Pdf.Itext.SaveOption.Temp">
+            
+             Temp
+            
+             <summary>
+             Gets or sets the path of the working directory. If the property
+             is empty, the same directory as the source PDF file will be used.
+             </summary>
+            
+        </member>
+    </members>
+</doc>
